@@ -1,10 +1,10 @@
 # [PROJECT]
 
-[![CircleCI](https://circleci.com/gh/electriccitizen/[SITE].svg?style=shield)](https://circleci.com/gh/electriccitizen/[SITE])
-[![Dashboard [SITE]](https://img.shields.io/badge/dashboard-[SITE]-yellow.svg)](https://dashboard.pantheon.io/sites/9ec12d94-c804-44b7-968e-166a0b49fdc0#dev/code)
-[![Dev Site [SITE]](https://img.shields.io/badge/site-[SITE]-blue.svg)](http://dev-[SITE].pantheonsite.io/)
+[PROJECT] is a Composer-based Drupal 8 application hosted on Acquia Cloud. The application uses Acquia BLT (Build and Launch Tools) to manage local development and deployments. Acquia BLT is a set of standards, tools, and best practices recommended and supported by the Acquia Professional Services team. All site development and theming is done on a local virtual machine running Docksal.
 
-[PROJECT] is a Composer-based Drupal 8 application hosted on [Pantheon](http://dashboard.getpantheon.com). Follow this README to create your local environment, and to learn the best practices for effectively contributing to the project.
+This repository contains the project build files (composer.json, exported config, etc.), a custom theme, and any custom modules that have been added to the project. It does not contain Drupal core, vendor files, or contributed modules. This repository and its build files are used as the starting point for each build artifact and deployment.
+
+Please review this README and be sure to understand the [core concepts and safe workflow](docs/workflow/WORKFLOW.md) described below prior to beginning. These documents are based on a Mac install and adjustments may be needed for other platforms.
 
 ## Onboarding
 
@@ -25,22 +25,21 @@ Move to your project's root folder and initialize the site:
 Once the site is up, you are ready to start working:
 
 * Local: http://[SITE].docksal
-* Dev: http://dev-[SITE].pantheonsite.io
 * User: admin/admin (local)
 
-You can run [fin init](docs/commands/INIT.md) any time you want to reset or guarantee that your local environment is in a safe one-to-one state with your upstream environment. 
+You can run [fin init](docs/commands/INIT.md) any time you want to reset or guarantee that your local environment is in a safe one-to-one state with your upstream environment.
 
 ## Recommended workflow
 
 Here is a safe workflow that will help prevent lost work and other problems.
 
-```fin sync``` [(?)](docs/commands/SYNC.md) to ensure your local site is synced with the upstream environment before starting a new task 
+```fin sync``` [(?)](docs/commands/SYNC.md) to ensure your local branch and db is synced with the upstream environment before starting a new task
 
 ```git checkout -b <your-feature-branch>``` to checkout a new feature branch and do your thing
 
 ```fin drush cex``` to export your changes
 
-```git add``` to add any new configuration, theme, or custom module files 
+```git add``` to add any new configuration, theme, or custom module files
 
 ```git commit``` to commit your changes and get your feature branch into a safe, recoverable state
 
@@ -52,7 +51,7 @@ If you see errors or merge conflicts after running [fin sync](docs/commands/SYNC
 
 ## Submit a Github pull request
 
-Each time you push your feature branch, it triggers a Circle CI build to run tests against the development server. You can continue to push to your branch until your work is complete and your site is passing its automated tests. Once your feature branch looks good and is passing its Circle CI tests, submit a Github pull request against your branch. A project maintainer will review the changes and merge into master.
+Once your feature branch looks good, submit a Github pull request against your branch into master branch. A project maintainer will review the changes and merge into master.
 
 *Note: Advanced or otherwise approved users can submit and merge their own PRs, and/or merge and push a feature branch directly into master without a formal pull request. Ask if you have questions, and err on the side of caution.*
 
@@ -67,14 +66,16 @@ You are working in a team environment and must follow a few rules. If you are ca
 
 See this guide to [following a safe workflow](docs/workflow/WORKFLOW.md) when using configuration management in Drupal 8. The recommended workflow below follows these best practices, and includes two helper commands (```fin sync``` and ```fin validate```) that automate important components of a safe work flow.
 
+## Deploying to Acquia
+
 
 ## Next steps
 
 These documents contain other important information about the project and working with your local environment.
 
-* [Available commands](docs/commands/COMMANDS.md) 
+* [Available commands](docs/commands/COMMANDS.md)
 * [Following a safe workflow](docs/workflow/WORKFLOW.md)
-* [Frontend and theming documentatiob](docs/frontend/THEME.md)
+* [Frontend and theming documentation](docs/frontend/THEME.md)
 * [Project notes](docs/custom/NOTES.md)
 * [Troubleshooting](docs/local/TROUBLESHOOT.md)
 * [Working with Docksal](docs/local/DOCKSAL.md)
