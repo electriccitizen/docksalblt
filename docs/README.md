@@ -66,8 +66,21 @@ You are working in a team environment and must follow a few rules. If you are ca
 
 See this guide to [following a safe workflow](docs/workflow/WORKFLOW.md) when using configuration management in Drupal 8. The recommended workflow below follows these best practices, and includes two helper commands (```fin sync``` and ```fin validate```) that automate important components of a safe work flow.
 
-## Deploying to Acquia
+## Deploying to Acquia dev server
 
+Once your feature branch has been merged into master it is time to deploy a build artifact to Acquia Cloud. Make sure you are on a clean master branch, and then:
+
+```blt deploy --branch "master-build"```
+
+This command will create a build artifact and automatically deploy it to master-build branch of the remote Acquia repository and deploy your work directly to the Acquia dev server for review and testings.
+
+## Tag and deploy to test or production
+
+After you have reviewed you work on the dev server, create a new build tag so that it can be deployed to stage and production.
+
+```blt deploy --tag "1.x.x```
+
+You can now deploy your build to stage and production on Acquia Cloud.
 
 ## Next steps
 
