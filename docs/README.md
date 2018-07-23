@@ -29,6 +29,16 @@ Once the site is up, you are ready to start working:
 
 You can run [fin init](docs/commands/INIT.md) any time you want to reset or guarantee that your local environment is in a safe one-to-one state with your upstream environment.
 
+## Be a good citizen
+
+You are working in a team environment and must follow a few rules. If you are careless, it can lead to:
+
+* Losing all of your uncommitted work (bad)
+* Overriding or losing the work of others (worse)
+* Un-installable configuration or deploy errors
+
+See this guide to [following a safe workflow](docs/workflow/WORKFLOW.md) when using configuration management in Drupal 8. The recommended workflow below follows these best practices, and includes two helper commands (```fin sync``` and ```fin validate```) that automate important components of a safe work flow.
+
 ## Recommended workflow
 
 Here is a safe workflow that will help prevent lost work and other problems.
@@ -55,16 +65,6 @@ Once your feature branch looks good, submit a Github pull request against your b
 
 *Note: Advanced or otherwise approved users can submit and merge their own PRs, and/or merge and push a feature branch directly into master without a formal pull request. Ask if you have questions, and err on the side of caution.*
 
-
-## Be a good citizen
-
-You are working in a team environment and must follow a few rules. If you are careless, it can lead to:
-
-* Losing all of your uncommitted work (bad)
-* Overriding or losing the work of others (worse)
-* Uninstallable configuration or deploy errors
-
-See this guide to [following a safe workflow](docs/workflow/WORKFLOW.md) when using configuration management in Drupal 8. The recommended workflow below follows these best practices, and includes two helper commands (```fin sync``` and ```fin validate```) that automate important components of a safe work flow.
 
 ## Deploying to Acquia dev server
 
