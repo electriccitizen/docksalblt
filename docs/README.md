@@ -16,7 +16,7 @@ See the [setup documentation](docs/SETUP.md) if you are installing VirtualBox, D
 
 ```cd [SITE]```
 
-git remote add upstream mpls@svn-6488.devcloud.hosting.acquia.com:mpls.git
+```git remote add upstream mpls@svn-6488.devcloud.hosting.acquia.com:mpls.git```
 
 ```composer install```
 
