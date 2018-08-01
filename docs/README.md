@@ -14,9 +14,9 @@ See the [setup documentation](docs/SETUP.md) if you are installing VirtualBox, D
 
 ```git clone git@github.com:electriccitizen/[SITE].git```
 
-Move to your project's root folder and initialize the site:
-
 ```cd [SITE]```
+
+git remote add upstream mpls@svn-6488.devcloud.hosting.acquia.com:mpls.git
 
 ```composer install```
 
