@@ -32,7 +32,8 @@ cd $PROJECT_ROOT
 
   # Sync the database
   echo "Syncing database from $PANTHEON_SITE_ENV..."
-  fin drush sql-sync $REMOTE_ALIAS @self -y
+  drush $REMOTE_ALIAS sql-dump > db.sql
+  drush sql-cli < db.sql
 
   #update admin pwd
   echo "Updating user 1 $USER1 password to admin..."
