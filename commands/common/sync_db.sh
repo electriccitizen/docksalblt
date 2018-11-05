@@ -28,16 +28,22 @@ echo-yellow () { echo -e "${yellow}$1${NC}"; }
 sync_db ()
 
 {
+echo "Change folder to $PROJECT_ROOT"
 cd $PROJECT_ROOT
 
   # Sync the database
   echo "Syncing database from $PANTHEON_SITE_ENV..."
-  drush $REMOTE_ALIAS sql-dump > db.sql
-  drush sql-cli < db.sql
+  pwd
+  fin drush sql:sync @mpls.prod @self
+
+  #drush sql:sync $REMOTE_ALIAS @self -y
+  #drush $REMOTE_ALIAS status
+  #fin drush $REMOTE_ALIAS sql-dump > db.sql
+  #fin drush sql-cli < db.sql
 
   #update admin pwd
   echo "Updating user 1 $USER1 password to admin..."
-  fin drush upwd $USER1 --password=admin
+  fin drush user:password $USER1 "admin"
 
   # Move on to config sync
   _sync_config
