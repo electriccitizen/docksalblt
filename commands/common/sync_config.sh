@@ -46,7 +46,7 @@ fi
 
 # Clear cache
 echo -e "${green_bg} Step 8 ${NC}${green} Clearing caches...${NC}"
-fin drush cr all
+fin drush cr
 
 echo -en "${green_bg} SYNC COMPLETE! ${NC} "
 echo -e "Open ${yellow}http://${VIRTUAL_HOST}${NC} in your browser to verify the setup."
