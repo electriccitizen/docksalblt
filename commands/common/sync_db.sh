@@ -31,15 +31,13 @@ sync_db ()
 echo "Change folder to $PROJECT_ROOT"
 cd $PROJECT_ROOT
 
-  # Sync the database
-  echo "Syncing database from $PANTHEON_SITE_ENV..."
-  pwd
-  fin drush sql:sync @mpls.prod @self
 
-  #drush sql:sync $REMOTE_ALIAS @self -y
-  #drush $REMOTE_ALIAS status
-  #fin drush $REMOTE_ALIAS sql-dump > db.sql
-  #fin drush sql-cli < db.sql
+  # Drop the current database before continuing
+  fin drush sql-drop -y
+  
+  # Sync the database
+  echo "Syncing database from $REMOTE_ALIAS..."
+  fin drush sql:sync $REMOTE_ALIAS @self
 
   #update admin pwd
   echo "Updating user 1 $USER1 password to admin..."
