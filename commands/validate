@@ -75,17 +75,13 @@ composer install
 echo -e "${green_bg} Step 3 ${NC}${green} Running database updates...${NC}"
 fin drush updb -y
 
-# Run entity updates
-echo -e "${green_bg} Step 4 ${NC}${green} Running entity updates...${NC}"
-fin drush entup -y
-
 # Configure things for local development environment.
 echo -e "${green_bg} Step 5 ${NC}${green} Importing config...${NC}"
 fin drush cim -y
 
 # Clear cache
 echo -e "${green_bg} Step 6 ${NC}${green} Clearing caches...${NC}"
-fin drush cr all
+fin drush cr
 
 echo -en "${green_bg} VALIDATION COMPLETE! ${NC} "
 echo -e "Open ${yellow}http://${VIRTUAL_HOST}${NC} in your browser to verify the setup."
