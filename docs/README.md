@@ -78,7 +78,12 @@ This command will create a build artifact and automatically deploy it to master-
 
 After you have reviewed you work on the dev server, create a new build tag so that it can be deployed to stage and production.
 
-```blt deploy --tag "1.x.x"```
+```blt deploy --tag "yyyy.mm.dd"```
+
+Use the following tag for subsequent deploys on the same day
+
+```blt deploy --tag "yyyy.mm.dd-1"```
+```blt deploy --tag "yyyy.mm.dd-2"```
 
 You can now deploy your build to stage and production on Acquia Cloud.
 
