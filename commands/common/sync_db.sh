@@ -37,7 +37,7 @@ cd $PROJECT_ROOT
   
   # Sync the database
   echo "Syncing database from $REMOTE_ALIAS..."
-  fin drush sql:sync $REMOTE_ALIAS @self
+  fin drush sql:sync $REMOTE_ALIAS @self -y
 
   #update admin pwd
   echo "Updating user 1 $USER1 password to admin..."
