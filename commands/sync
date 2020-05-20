@@ -96,7 +96,7 @@ git pull origin $GIT_BRANCH
 
 # Run composer install
 echo -e "${green_bg} Step 3 ${NC}${green} Running composer install...${NC}"
-composer install
+fin composer install
 
 # Start database sync
 echo -e "${green_bg} Step 4 ${NC}${green} Import database from:${NC}"
@@ -109,7 +109,7 @@ if [[ ${SKIPDB} = "TRUE" ]]; then
     _sync_config $SKIPCIM
 else
     while (( !all_done )); do
-        options=($PANTHEON_SITE_ENV 'none' 'exit')
+        options=($REMOTE_ALIAS 'none' 'exit')
         select opt in "${options[@]}"; do
             case $REPLY in
                 1) _sync_db; exit ;;
